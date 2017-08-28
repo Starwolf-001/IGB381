@@ -1,0 +1,1 @@
+Week 4 was Assignment 1 preparation
