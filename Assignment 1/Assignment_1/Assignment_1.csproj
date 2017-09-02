@@ -77,6 +77,17 @@
   <ItemGroup>
     <Compile Include="Assets\Lightning\Scripts\SunAndMoon.cs" />
     <Compile Include="Assets\NormalMapping.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\CleanUpAll.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\AnalogicClock.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\ClockTimer.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\DigitalClock.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\DigitalClockValue.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\DisplayFrame.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\DisplaySelectedObject.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\OptionsDisplay.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\OptionsDisplaySaveVar.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\PlayVideo.cs" />
+    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\SimpleSwitchMaterial.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
@@ -95,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NormalMapping.shader" />
+    <None Include="Assets\Objects\Customizable_Furnture\Readme\Readme.txt" />
     <None Include="Assets\Objects\Floor\Used Crazy Bump.txt" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
