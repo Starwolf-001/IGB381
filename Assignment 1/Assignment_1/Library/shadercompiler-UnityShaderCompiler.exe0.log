@@ -10,3 +10,45 @@ Cmd: preprocess
   insize=3120 outsize=361 ok=1
 Cmd: preprocess
   insize=3120 outsize=361 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3116 outsize=357 ok=1
+Cmd: preprocess
+  insize=3120 outsize=361 ok=1
+Cmd: preprocess
+  insize=3121 outsize=362 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=949 outsize=1718 kw=SPOT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=949 outsize=3150 kw=SPOT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+Cmd: preprocess
+  insize=1000 outsize=1155 ok=1
+Cmd: preprocess
+  insize=3125 outsize=366 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3117 outsize=358 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=7703 outsize=2286 kw=DIRECTIONAL SHADOWS_SCREEN pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=7703 outsize=2906 kw=DIRECTIONAL SHADOWS_SCREEN pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=5037 outsize=1718 kw=SPOT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5037 outsize=2050 kw=SPOT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1
+Cmd: preprocess
+  insize=3118 outsize=359 ok=1

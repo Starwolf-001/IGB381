@@ -35,6 +35,6 @@ public class EastLight : MonoBehaviour {
 
     void CurrentSpeedUI()
     {
-        textSpeed.text = speed.ToString();
+        //textSpeed.text = speed.ToString();
     }
 }

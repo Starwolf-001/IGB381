@@ -78,11 +78,11 @@
     <Compile Include="Assets\Lightning\Scripts\EastLight.cs" />
     <Compile Include="Assets\Lightning\Scripts\NorthLight.cs" />
     <Compile Include="Assets\Lightning\Scripts\SunAndMoon.cs" />
-    <Compile Include="Assets\Objects\Assets_Beds\Materials\NormalMapping.cs" />
-    <Compile Include="Assets\Objects\Floor\Materials\NormalMapping.cs" />
-    <Compile Include="Assets\Objects\Georgian, by Tokyo Liu\Materials\NormalMapping.cs" />
-    <Compile Include="Assets\Objects\MSFMC_RadarDish\Materials\NormalMapping.cs" />
-    <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\NormalMapping.cs" />
+    <Compile Include="Assets\Objects\Bed\Materials\BedShader.cs" />
+    <Compile Include="Assets\Objects\Chair\Materials\ChairShader.cs" />
+    <Compile Include="Assets\Objects\Floor\Materials\FloorShader.cs" />
+    <Compile Include="Assets\Objects\Radardish\Materials\RadarShader.cs" />
+    <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
@@ -99,12 +99,11 @@
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Objects\Assets_Beds\Materials\NormalMapping.shader" />
-    <None Include="Assets\Objects\Floor\Materials\NormalMapping.shader" />
-    <None Include="Assets\Objects\Floor\Materials\Used Crazy Bump.txt" />
-    <None Include="Assets\Objects\Georgian, by Tokyo Liu\Materials\NormalMapping.shader" />
-    <None Include="Assets\Objects\MSFMC_RadarDish\Materials\NormalMapping.shader" />
-    <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\NormalMapping.shader" />
+    <None Include="Assets\Objects\Bed\Materials\BedShader.shader" />
+    <None Include="Assets\Objects\Chair\Materials\ChairShader.shader" />
+    <None Include="Assets\Objects\Floor\Materials\FloorShader.shader" />
+    <None Include="Assets\Objects\Radardish\Materials\RadarShader.shader" />
+    <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
