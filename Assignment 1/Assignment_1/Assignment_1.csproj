@@ -78,19 +78,6 @@
     <Compile Include="Assets\Lightning\Scripts\EastLight.cs" />
     <Compile Include="Assets\Lightning\Scripts\NorthLight.cs" />
     <Compile Include="Assets\Lightning\Scripts\SunAndMoon.cs" />
-    <Compile Include="Assets\NormalMapping.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\CleanUpAll.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\AnalogicClock.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\ClockTimer.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\DigitalClock.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\Clock\DigitalClockValue.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\DisplayFrame.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\DisplaySelectedObject.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\OptionsDisplay.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\OptionsDisplaySaveVar.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\PlayVideo.cs" />
-    <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\SimpleSwitchMaterial.cs" />
-    <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
@@ -105,13 +92,13 @@
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\Shaders\NormalMapping.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\NormalMapping.shader" />
-    <None Include="Assets\Objects\Customizable_Furnture\Readme\Readme.txt" />
-    <None Include="Assets\Objects\Floor\Used Crazy Bump.txt" />
+    <None Include="Assets\Objects\Floor\Materials\Used Crazy Bump.txt" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Shaders\NormalMapping.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
