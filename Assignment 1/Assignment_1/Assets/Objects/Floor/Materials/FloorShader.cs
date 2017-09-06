@@ -8,7 +8,7 @@ public class FloorShader : MonoBehaviour
 	{
 		Texture2D tex1 	= (Texture2D)Resources.Load("tile_floor_COLOR", typeof(Texture2D)); // COLOR TEXTURE
 		Texture2D tex2  = (Texture2D)Resources.Load("tile_floor_NRM", typeof(Texture2D)); // NORMAL MAP
-		tex1.filterMode = FilterMode.Trilinear;		// Options are Binlinear, Trilinear
+        tex1.filterMode = FilterMode.Trilinear;		// Options are Binlinear, Trilinear
 		tex1.wrapMode 	= TextureWrapMode.Repeat;	// Change to Repeat and compare results
 		tex1.anisoLevel = 9;						// Quality values between 1 and 9
 		tex2.filterMode = FilterMode.Trilinear;		// Options are Binlinear, Trilinear
@@ -19,7 +19,7 @@ public class FloorShader : MonoBehaviour
 		{
 			GetComponent<Renderer>().material.SetTexture("_Tex1", tex1);
             GetComponent<Renderer>().material.SetTexture("_Tex2", tex2);
-		}
+        }
 		else
 		    Debug.Log("Failed to load image");
 	}

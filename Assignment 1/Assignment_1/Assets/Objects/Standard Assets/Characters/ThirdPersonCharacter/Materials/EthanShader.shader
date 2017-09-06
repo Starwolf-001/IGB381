@@ -6,7 +6,8 @@ Shader "EthanShader"
  	Properties 
  	{
 		_Tex1("Base (RGB)", 2D) = "black" {}    
-		_Tex2("Bumpmap", 2D) = "bump" {} 
+		_Tex2("Bumpmap", 2D) = "bump" {}
+		_Tex3("Occlusion", 2D) = "occ" {}
 	}	
     
     SubShader 
@@ -24,6 +25,7 @@ Shader "EthanShader"
 			// used to transform vertices from local space into homogenous clipping space
 			sampler2D _Tex1;
 			sampler2D _Tex2;
+			sampler2D _Tex3;
 			
 			// light direction in world space
 			static float3 _vecCameraPos 	= {0.0f, 0.0f, -5.0f};	// camera position (in world space)

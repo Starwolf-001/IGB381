@@ -75,9 +75,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Lightning\Scripts\EastLight.cs" />
-    <Compile Include="Assets\Lightning\Scripts\NorthLight.cs" />
-    <Compile Include="Assets\Lightning\Scripts\SunAndMoon.cs" />
+    <Compile Include="Assets\Lightning\Light Source Scripts\EastLight.cs" />
+    <Compile Include="Assets\Lightning\Light Source Scripts\NorthLight.cs" />
+    <Compile Include="Assets\Lightning\Light Source Scripts\SunAndMoon.cs" />
     <Compile Include="Assets\Objects\Bed\Materials\BedShader.cs" />
     <Compile Include="Assets\Objects\Chair\Materials\ChairShader.cs" />
     <Compile Include="Assets\Objects\Floor\Materials\FloorShader.cs" />
