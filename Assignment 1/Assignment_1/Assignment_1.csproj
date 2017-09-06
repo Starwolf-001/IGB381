@@ -75,6 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Lightning\Scripts\EastLight.cs" />
+    <Compile Include="Assets\Lightning\Scripts\NorthLight.cs" />
     <Compile Include="Assets\Lightning\Scripts\SunAndMoon.cs" />
     <Compile Include="Assets\NormalMapping.cs" />
     <Compile Include="Assets\Objects\Customizable_Furnture\Source\Scripts\CleanUpAll.cs" />
