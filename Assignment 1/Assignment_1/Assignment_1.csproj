@@ -80,6 +80,7 @@
     <Compile Include="Assets\Lightning\Light Source Scripts\SunOrbit.cs" />
     <Compile Include="Assets\Objects\Floor\Materials\FloorShader.cs" />
     <Compile Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.cs" />
+    <Compile Include="Assets\Objects\Lamps pack\Materials\LampShader.cs" />
     <Compile Include="Assets\Objects\Lion_Statue\Materials\BlockShader.cs" />
     <Compile Include="Assets\Objects\Lion_Statue\Materials\LionShader.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.cs" />
@@ -102,6 +103,7 @@
   <ItemGroup>
     <None Include="Assets\Objects\Floor\Materials\FloorShader.shader" />
     <None Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.shader" />
+    <None Include="Assets\Objects\Lamps pack\Materials\LampShader.shader" />
     <None Include="Assets\Objects\Lion_Statue\Materials\BlockShader.shader" />
     <None Include="Assets\Objects\Lion_Statue\Materials\LionShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.shader" />
