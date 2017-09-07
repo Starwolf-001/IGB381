@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SunAndMoon : MonoBehaviour {
+public class SunOrbit : MonoBehaviour {
 
     public int speed;
     public Text textSpeed;
+    public bool decreaseButton = false;
+    public bool increaseButton = false;
 
     // Use this for initialization
     void Start ()
@@ -18,7 +20,20 @@ public class SunAndMoon : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Orbit();
+        if (decreaseButton == true)
+        {
+            speed--;
+            decreaseButton = false;
+        }
+        if (increaseButton == true)
+        {
+            speed++;
+            increaseButton = false;
+        }
+        if (speed != 0)
+        {
+            Orbit();
+        }
         CurrentSpeedUI();
     }
 

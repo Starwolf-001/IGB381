@@ -13,9 +13,9 @@ public class NorthLight : MonoBehaviour {
     void Start()
     {
         // Default Speed
-        speed = 0;
+        speed = 1;
         // Default angle
-        angle = 25f;
+        angle = 15f;
     }
 
     // Update is called once per frame
@@ -35,6 +35,6 @@ public class NorthLight : MonoBehaviour {
 
     void CurrentSpeedUI()
     {
-        //textSpeed.text = speed.ToString();
+        textSpeed.text = speed.ToString();
     }
 }
