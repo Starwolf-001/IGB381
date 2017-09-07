@@ -78,10 +78,10 @@
     <Compile Include="Assets\Lightning\Light Source Scripts\EastLight.cs" />
     <Compile Include="Assets\Lightning\Light Source Scripts\NorthLight.cs" />
     <Compile Include="Assets\Lightning\Light Source Scripts\SunAndMoon.cs" />
-    <Compile Include="Assets\Objects\Bed\Materials\BedShader.cs" />
-    <Compile Include="Assets\Objects\Chair\Materials\ChairShader.cs" />
     <Compile Include="Assets\Objects\Floor\Materials\FloorShader.cs" />
-    <Compile Include="Assets\Objects\Radardish\Materials\RadarShader.cs" />
+    <Compile Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.cs" />
+    <Compile Include="Assets\Objects\Lion_Statue\Materials\BlockShader.cs" />
+    <Compile Include="Assets\Objects\Lion_Statue\Materials\LionShader.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
@@ -97,15 +97,17 @@
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
     <Compile Include="Assets\Objects\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\Objects\Statue Bear Rough Bronze\Materials\BearShader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Objects\Bed\Materials\BedShader.shader" />
-    <None Include="Assets\Objects\Chair\Materials\ChairShader.shader" />
     <None Include="Assets\Objects\Floor\Materials\FloorShader.shader" />
-    <None Include="Assets\Objects\Radardish\Materials\RadarShader.shader" />
+    <None Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.shader" />
+    <None Include="Assets\Objects\Lion_Statue\Materials\BlockShader.shader" />
+    <None Include="Assets\Objects\Lion_Statue\Materials\LionShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Objects\Statue Bear Rough Bronze\Materials\BearShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
