@@ -2,37 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class SunOrbit : MonoBehaviour {
 
     public int speed;
-    public Text textSpeed;
+    public float time;
+    public TimeSpan currentTime;
+    public Transform sunTrans;
+    public Light sun;
+    public Text textTime;
+    public int days;
+    public float intensity;
 
-    // Use this for initialization
-    void Start ()
+    void Start()
     {
-        // Default Speed
-        speed = 10;
+        speed = 1;
+        time = 21600;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
-        if (speed != 0)
+        ChangeTime();
+    }
+
+    public void ChangeTime()
+    {
+        time += Time.deltaTime * speed;
+        if(time > 86400)
         {
-            Orbit();
+            days += 1;
+            time = 0;
         }
-        CurrentSpeedUI();
-    }
+        currentTime = TimeSpan.FromSeconds(time);
+        string[] tempTime = currentTime.ToString().Split(":"[0]);
+        textTime.text = tempTime[0] + ":" + tempTime[1];
 
-    void Orbit()
-    {
-        transform.RotateAround(Vector3.zero, Vector3.right, speed * Time.deltaTime);
-        transform.LookAt(Vector3.zero);
-    }
+        sunTrans.rotation = Quaternion.Euler(new Vector3((time - 21600) / 86400 * 360, 0, 0));
 
-    void CurrentSpeedUI()
-    {
-        textSpeed.text = speed.ToString();
+        if(time < 43200)
+        {
+            intensity = 1 - (43200 - time) / 43200;
+        }
+        else
+        {
+            intensity = 1 - ((43200 - time) / 43200 * -1);
+        }
+
+        sun.intensity = intensity;
     }
 }
