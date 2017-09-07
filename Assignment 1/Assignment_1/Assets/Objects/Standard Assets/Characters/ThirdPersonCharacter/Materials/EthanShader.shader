@@ -250,10 +250,6 @@ Shader "EthanShader"
 
 				float3 lightFinal = diffuse + specComp + rimLighting;
 
-				// index into textures
-				float4 tex = tex2D(_Tex1, a_Input.tex.xy * _Tex1_ST.xy + _Tex1_ST.zw);
-				float3 normal = UnpackNormal(tex2D(_Tex2, a_Input.tex)).rgb;
-
 				return float4(lightFinal * _Color.xyz, 1.0);
 			}			
 			ENDCG

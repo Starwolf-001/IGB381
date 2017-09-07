@@ -12,7 +12,6 @@ public class SunOrbit : MonoBehaviour {
     public Transform sunTrans;
     public Light sun;
     public Text textTime;
-    public int days;
     public float intensity;
 
     void Start()
@@ -32,7 +31,6 @@ public class SunOrbit : MonoBehaviour {
         time += Time.deltaTime * speed;
         if(time > 86400)
         {
-            days += 1;
             time = 0;
         }
         currentTime = TimeSpan.FromSeconds(time);

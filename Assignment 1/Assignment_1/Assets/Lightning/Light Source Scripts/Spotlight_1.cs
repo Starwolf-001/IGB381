@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EastLight : MonoBehaviour {
+public class Spotlight_1 : MonoBehaviour {
 
     public int speed;
     public float angle;
@@ -15,7 +15,7 @@ public class EastLight : MonoBehaviour {
         // Default Speed
         speed = 1;
         // Default angle
-        angle = 15f;
+        angle = 10f;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class EastLight : MonoBehaviour {
 
     void Pivot()
     {
-        transform.rotation = Quaternion.Euler(0f, angle * Mathf.Sin(Time.time * speed), 0f);
+        transform.rotation = Quaternion.Euler(90 + angle * Mathf.Sin(Time.time * speed), 180 + angle * Mathf.Sin(Time.time * speed), angle * Mathf.Sin(Time.time * speed));
     }
 
     void CurrentSpeedUI()
