@@ -138,6 +138,8 @@
 			#pragma vertex VS_NormalMapping
 			#pragma fragment PS_NormalMapping
 
+			#include "UnityCG.cginc"
+
 			// User defined variables
 			// Object textures
 			uniform sampler2D _Tex1;
