@@ -16,7 +16,7 @@
 	}
 
 	Subshader 
-	{
+	{	
 		// First Pass
 		Pass
 		{
@@ -24,6 +24,8 @@
 			CGPROGRAM
 			#pragma vertex VS_NormalMapping
 			#pragma fragment PS_NormalMapping
+
+			#include "UnityCG.cginc"
 
 			// User defined variables
 			// Object textures
@@ -73,7 +75,9 @@
 
 				output.posWorld = mul(unity_ObjectToWorld, a_Input.pos);
 				output.pos = mul(UNITY_MATRIX_MVP, a_Input.pos);
-				output.tex = a_Input.tex;
+				// Adjust texture coordinates
+				output.tex.x = a_Input.tex.x * 2;
+				output.tex.y = a_Input.tex.y * 2;
 
 				return output;
 			}
@@ -137,8 +141,6 @@
 			CGPROGRAM
 			#pragma vertex VS_NormalMapping
 			#pragma fragment PS_NormalMapping
-
-			#include "UnityCG.cginc"
 
 			// User defined variables
 			// Object textures
