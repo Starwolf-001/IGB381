@@ -91,7 +91,7 @@
 			}
 
 			// normal mapping pixel shader
-			float4 PS_NormalMapping(VSOutput a_Input) : COLOR
+			half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 			{
 				// calculate vector to camera
 				float3 toCamera = normalize(_vecCameraPos.xyz - a_Input.posWorld.xyz);
@@ -213,7 +213,7 @@
 			}
 
 			// normal mapping pixel shader
-			float4 PS_NormalMapping(VSOutput a_Input) : COLOR
+			half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 			{
 				// calculate vector to camera
 				float3 toCamera = normalize(_vecCameraPos.xyz - a_Input.posWorld.xyz);
