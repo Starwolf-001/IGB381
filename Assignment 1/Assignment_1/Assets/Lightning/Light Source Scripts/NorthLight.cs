@@ -13,7 +13,7 @@ public class NorthLight : MonoBehaviour {
     void Start()
     {
         // Default Speed
-        speed = 1;
+        speed = 0;
         // Default angle
         angle = 25f;
     }
