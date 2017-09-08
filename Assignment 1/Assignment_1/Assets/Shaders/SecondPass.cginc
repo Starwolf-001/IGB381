@@ -1,4 +1,16 @@
-﻿#include "UnityCG.cginc"
+﻿/*
+* Name: SecondPass.cs
+* Date: 08/09/2017
+* Author: Michael Cartwright
+* Version: 5.0
+* Custom shader that is used in the second pass of a Game Object's shader.
+* Applies color, specular, diffuse and rim lighting effects to an Object.
+* Also includes bump mapping and depth for textures.
+* These parameters can be adjusted and changed by the user.
+* Based from Spotlight light sources and designed for spotlights
+*/
+
+#include "UnityCG.cginc"
 
 // User defined variables
 // Object textures
@@ -18,7 +30,11 @@ uniform float4 _LightColor0;
 uniform float4x4 unity_WorldToLight;
 uniform sampler2D _LightTexture0;
 
-// vertex shader input that allows position and texture coordinates as well as TBN
+/*
+* Establishes a structure for the Vertex Shader Input
+* Pre: Allows for position and texture coordinates
+* Post: VSOutput
+*/
 struct VSInput
 {
 	float4 pos: POSITION;
@@ -27,7 +43,11 @@ struct VSInput
 	float4 tex: TEXCOORD0;
 };
 
-// vertex shader output structure
+/*
+* Establishes a structure for the Vertex Shader Output
+* Pre: Allows for position and texture coordinates based in the Unity world
+* Post: VS_NormalMapping
+*/
 struct VSOutput
 {
 	float4 pos: SV_POSITION;
@@ -39,7 +59,11 @@ struct VSOutput
 	float4 posLight : TEXCOORD5;
 };
 
-// vertex shader
+/*
+* Vertex shader
+* Pre: Calculates for position and texture coordinates based in the Unity world
+* Post: Returns VSOutput values
+*/
 VSOutput VS_NormalMapping(VSInput a_Input)
 {
 	VSOutput output;
@@ -57,7 +81,12 @@ VSOutput VS_NormalMapping(VSInput a_Input)
 	return output;
 }
 
-// pixel shader
+/*
+* Pixel Shader for spotlights and blends them together
+* Pre: Calculates camera and light direction and positioning in the world.
+*      Calculates final lighting effect and spotlight cookieAttenuation for crisp light projection on an object
+* Post: Produces custom lighting based on Spotlights
+*/
 half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 {
 	// calculate vector to camera
@@ -73,6 +102,7 @@ half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 	}
 	else
 	{
+		// Calculate light direction and attenuation of light source from a distance
 		float3 fragToLightSource = _WorldSpaceLightPos0.xyz - a_Input.posWorld.xyz;
 		float distance = length(fragToLightSource);
 		atten = 1.0 / distance;

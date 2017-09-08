@@ -2,9 +2,13 @@
 * Name: FirstPass.cs
 * Date: 08/09/2017
 * Author: Michael Cartwright
-* Version: 4.0
+* Version: 4.1
 * Custom shader that is used in the first pass of a Game Object's shader.
-* Ap
+* Applies color and normal mapping textures.
+* Applies color, specular, diffuse and rim lighting effects to an Object.
+* Also includes bump mapping and depth for textures.
+* These parameters can be adjusted and changed by the user.
+* Based from Sun directional light source
 */
 
 #include "UnityCG.cginc"
@@ -27,7 +31,11 @@ uniform float _BumpDepth;
 // Unity light
 uniform float4 _LightColor0;
 
-// vertex shader input that allows position and texture coordinates as well as TBN
+/*
+* Establishes a structure for the Vertex Shader Input
+* Pre: Allows for position and texture coordinates
+* Post: VSOutput
+*/
 struct VSInput
 {
 	float4 pos: POSITION;
@@ -36,7 +44,11 @@ struct VSInput
 	float4 tex: TEXCOORD0;
 };
 
-// vertex shader output structure
+/*
+* Establishes a structure for the Vertex Shader Output
+* Pre: Allows for position and texture coordinates based in the Unity world
+* Post: VS_NormalMapping
+*/
 struct VSOutput 
 {
 	float4 pos: SV_POSITION;
@@ -47,7 +59,11 @@ struct VSOutput
 	float3 binoWorld: TEXCOORD4;
 };
 
-// vertex shader
+/*
+* Vertex shader
+* Pre: Calculates for position and texture coordinates based in the Unity world
+* Post: Returns VSOutput values
+*/
 VSOutput VS_NormalMapping(VSInput a_Input) 
 {
 	VSOutput output;
@@ -64,7 +80,12 @@ VSOutput VS_NormalMapping(VSInput a_Input)
 	return output;
 }
 
-// pixel shader
+/*
+* Pixel Shader for 1 directional light source, being the Sun
+* Pre: Calculates camera and light direction and positioning in the world.
+*      Calculates final lighting effect
+* Post: Produces custom lighting based on directional light source from the Sun
+*/
 half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 {
 	// calculate vector to camera
@@ -80,6 +101,7 @@ half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 	}
 	else 
 	{
+		// Calculate light direction and attenuation of light source from a distance
 		float3 fragToLightSource = _WorldSpaceLightPos0.xyz - a_Input.posWorld.xyz;
 		float distance = length(fragToLightSource);
 		atten = 1.0 / distance;
