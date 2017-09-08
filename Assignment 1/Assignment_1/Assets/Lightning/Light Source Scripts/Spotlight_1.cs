@@ -8,6 +8,7 @@ public class Spotlight_1 : MonoBehaviour {
     public int speed;
     public float angle;
     public Text textSpeed;
+    public Text textAngle;
 
     // Use this for initialization
     void Start()
@@ -36,5 +37,6 @@ public class Spotlight_1 : MonoBehaviour {
     void CurrentSpeedUI()
     {
         textSpeed.text = speed.ToString();
+        textAngle.text = angle.ToString();
     }
 }

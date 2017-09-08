@@ -48,8 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\SMAA\Scripts\Editor\MinDrawer.cs" />
      <Compile Include="Assets\SMAA\Scripts\Editor\SMAAEditor.cs" />
+     <None Include="Assets\Shaders\FirstPass.cginc" />
      <None Include="Assets\SMAA\Shaders\SMAA.shader" />
      <None Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.shader" />
+     <None Include="Assets\Shaders\SecondPass.cginc" />
      <None Include="Assets\Objects\Floor\Materials\FloorShader.shader" />
      <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\SMAA\Shaders\SMAA.cginc" />
@@ -58,7 +60,6 @@
      <None Include="Assets\Objects\Statue Bear Rough Bronze\Materials\BearShader.shader" />
      <None Include="Assets\Objects\Lamps pack\Materials\LampShader.shader" />
      <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Objects\Lion_Statue\Materials\BlockShader.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>E:/Unity_5-5-4/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
