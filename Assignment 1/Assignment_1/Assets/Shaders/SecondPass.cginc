@@ -13,9 +13,10 @@ uniform float4 _RimColor;
 uniform float _ShineLevel;
 uniform float _RimPower;
 uniform float _BumpDepth;
-
 // Unity light
 uniform float4 _LightColor0;
+uniform float4x4 unity_WorldToLight;
+uniform sampler2D _LightTexture0;
 
 // vertex shader input that allows position and texture coordinates as well as TBN
 struct VSInput
@@ -35,6 +36,7 @@ struct VSOutput
 	float3 normWorld: TEXCOORD2;
 	float3 tangWorld: TEXCOORD3;
 	float3 binoWorld: TEXCOORD4;
+	float4 posLight : TEXCOORD5;
 };
 
 // vertex shader
@@ -42,11 +44,13 @@ VSOutput VS_NormalMapping(VSInput a_Input)
 {
 	VSOutput output;
 
+	output.posWorld = mul(unity_ObjectToWorld, a_Input.pos);
+	output.posLight = mul(unity_WorldToLight, output.posWorld);
+
 	output.normWorld = normalize(mul(float4(a_Input.nor, 0.0), unity_WorldToObject).xyz);
 	output.tangWorld = normalize(mul(unity_WorldToObject, a_Input.tang).xyz);
 	output.binoWorld = normalize(cross(output.normWorld, output.tangWorld) * a_Input.tang.w);
 
-	output.posWorld = mul(unity_ObjectToWorld, a_Input.pos);
 	output.pos = mul(UNITY_MATRIX_MVP, a_Input.pos);
 	output.tex = a_Input.tex;
 
@@ -98,5 +102,10 @@ half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 
 	// lighting
 	float3 lightFinal = diffuseRef + specRef + rimLighting;
-	return float4(lightFinal * _Color.xyz, 1.0);
+
+	// Spotlight Cookie Attenuation
+	float cookieAtten = 1.0;
+	cookieAtten = tex2D(_LightTexture0, a_Input.posLight.xy / a_Input.posLight.w + float2(0.5, 0.5)).a;
+
+	return saturate(cookieAtten * (float4(lightFinal * _Color.xyz, 1.0)));
 }

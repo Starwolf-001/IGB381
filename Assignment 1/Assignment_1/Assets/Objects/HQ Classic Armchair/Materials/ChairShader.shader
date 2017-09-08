@@ -1,5 +1,19 @@
-﻿Shader "ChairShader"
+﻿/*
+* Name: ChairShader.shader
+* Date: 08/09/2017
+* Author: Michael Cartwright
+* Version: 3.0
+* Shader for Object Armchair.
+* Uses the FirstPass.cginc and SecondPass.cginc custom shaders
+*/
+
+Shader "ChairShader"
 {
+	/*
+	* Properties for user to change for Armchair
+	* Pre: Default values selected
+	* Post: Changes based of user interaction
+	*/
 	Properties
 	{
 		// main and normal map textures 
@@ -15,11 +29,22 @@
 		_RimPower("Rim Power", Range(0.1, 10.0)) = 3.0
 	}
 
+	/*
+	* Subshader used for Armchair in Assignment_1
+	* Pre: First Pass begins
+	* Post: Second Pass ends
+	*/
 	Subshader
 	{
-		// First Pass
+		/*
+		* First Pass for directional light
+		* Pre: Processes FirstPass.cginc
+		* Post: Produces lighting effects for Floor from Sun directional light source using FirstPass.cginc custom shader
+		*/
 		Pass
 		{
+			// Directional light from Sun
+			// No Cookie Attenuation for lightsource
 			Tags{ "Lightmode" = "ForwardBase" }
 			CGPROGRAM
 			#pragma vertex VS_NormalMapping
@@ -28,10 +53,17 @@
 			ENDCG
 		}
 
-		// Second Pass
+		/*
+		* Second Pass for spotlights in scene
+		* Pre: Processes SecondPass.cginc
+		* Post: Produces lighting effects for Armchair from Lamp_1/Spotlight_1 and Lamp_2/Spotlight_2 source using
+		*       SecondPass.cginc custom shader
+		*/
 		Pass
 		{
+			// For additional light sources
 			Tags{ "Lightmode" = "ForwardAdd" }
+			// Additive blending
 			Blend One One
 			CGPROGRAM
 			#pragma vertex VS_NormalMapping
