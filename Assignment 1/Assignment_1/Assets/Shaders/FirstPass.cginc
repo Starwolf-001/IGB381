@@ -1,4 +1,13 @@
-﻿#include "UnityCG.cginc"
+﻿/*
+* Name: FirstPass.cs
+* Date: 08/09/2017
+* Author: Michael Cartwright
+* Version: 4.0
+* Custom shader that is used in the first pass of a Game Object's shader.
+* Ap
+*/
+
+#include "UnityCG.cginc"
 
 // User defined variables
 // Object textures
@@ -6,7 +15,6 @@ uniform sampler2D _Tex1;
 uniform sampler2D _Tex2;
 uniform float4 _Tex1_ST;
 uniform float4 _Tex2_ST;
-bool _Tile;
 
 // Lighting
 uniform float4 _Color;
