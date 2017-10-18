@@ -81,7 +81,6 @@
     <Compile Include="Assets\Objects\Floor\Materials\FloorShader.cs" />
     <Compile Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.cs" />
     <Compile Include="Assets\Objects\Lamps pack\Materials\LampShader.cs" />
-    <Compile Include="Assets\Objects\Lion_Statue\Materials\BlockShader.cs" />
     <Compile Include="Assets\Objects\Lion_Statue\Materials\LionShader.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.cs" />
     <Compile Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCamera.cs" />
@@ -104,12 +103,13 @@
     <None Include="Assets\Objects\Floor\Materials\FloorShader.shader" />
     <None Include="Assets\Objects\HQ Classic Armchair\Materials\ChairShader.shader" />
     <None Include="Assets\Objects\Lamps pack\Materials\LampShader.shader" />
-    <None Include="Assets\Objects\Lion_Statue\Materials\BlockShader.shader" />
     <None Include="Assets\Objects\Lion_Statue\Materials\LionShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Objects\Statue Bear Rough Bronze\Materials\BearShader.shader" />
+    <None Include="Assets\Shaders\FirstPass.cginc" />
+    <None Include="Assets\Shaders\SecondPass.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
