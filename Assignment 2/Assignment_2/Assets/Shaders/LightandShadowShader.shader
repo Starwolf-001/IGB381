@@ -1,8 +1,8 @@
 ﻿/*
-* Name: EthanShader.shader
-* Date: 25/10/2017
+* Name: LightandShadowShader.shader
+* Date: 27/10/2017
 * Author: Michael Cartwright
-* Version: 4.0
+* Version: 5.0
 * Shader for ThirdPersonCharacter Ethan
 * Uses the FirstPass.cginc, SecondPass.cginc and ShadowPass.cginc custom shaders
 */
@@ -10,7 +10,7 @@
 Shader "LightandShadowShader"
 {
 	/*
-	* Properties for user to change for Ethan
+	* Properties for user to change for GameObjects
 	* Pre: Default values selected
 	* Post: Changes based of user interaction
 	*/
@@ -39,7 +39,7 @@ Shader "LightandShadowShader"
 		/*
 		* First Pass for directional light
 		* Pre: Processes FirstPass.cginc
-		* Post: Produces lighting effects for Ethan from Sun directional light source using FirstPass.cginc custom shader
+		* Post: Produces lighting effects for a GameObject from the Sun directional light source using FirstPass.cginc custom shader
 		*/
 		Pass
 		{
@@ -58,8 +58,7 @@ Shader "LightandShadowShader"
 		/*
 		* Second Pass for spotlights in scene
 		* Pre: Processes SecondPass.cginc
-		* Post: Produces lighting effects for Lion Statue from Lamp_1/Spotlight_1 and Lamp_2/Spotlight_2 source using
-		*       SecondPass.cginc custom shader
+		* Post: Produces lighting effects for a gameObject from SpotLight sources
 		*/
 		Pass
 		{
@@ -68,6 +67,10 @@ Shader "LightandShadowShader"
 			// Additive blending
 			Blend One One
 			CGPROGRAM
+			// For Receiving Shadows
+			#pragma multi_compile _ SHADOWS_SCREEN
+			#pragma multi_compile _ VERTEXLIGHT_ON
+
 			#pragma vertex VS_NormalMapping
 			#pragma fragment PS_NormalMapping
 			#include "Assets\Shaders\SecondPass.cginc"
@@ -77,7 +80,7 @@ Shader "LightandShadowShader"
 		/*
 		* Shadow Pass for shadows to be cast
 		* Pre: All lightning effects completed
-		* Post: Produces shadow of object
+		* Post: Casts a shadow from the GameObject
 		*/
 		Pass
 		{
