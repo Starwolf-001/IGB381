@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Lightning\SunOrbit.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Objects\BirchPackVol1\Works For Fun.txt" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
