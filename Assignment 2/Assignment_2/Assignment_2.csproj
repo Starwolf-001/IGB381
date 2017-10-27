@@ -94,11 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Objects\BirchPackVol1\Works For Fun.txt" />
-    <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanShader.shader" />
     <None Include="Assets\Objects\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Objects\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\Objects\Terrain\Materials\TerrainShader.shader" />
     <None Include="Assets\Shaders\FirstPass.cginc" />
+    <None Include="Assets\Shaders\LightandShadowShader.shader" />
     <None Include="Assets\Shaders\SecondPass.cginc" />
     <None Include="Assets\Shaders\ShadowPass.cginc" />
     <None Include="Assets\Shaders\SplatterMap.cginc" />

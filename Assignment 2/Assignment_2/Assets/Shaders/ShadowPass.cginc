@@ -15,7 +15,8 @@
 */
 struct VertexInput
 {
-	float4 position: POSITION;
+	float4 position : POSITION;
+	float normal : NORMAL;
 };
 
 /*
@@ -25,8 +26,26 @@ struct VertexInput
 */
 float4 ShadowVertex(VertexInput vertex) : SV_POSITION
 {
-	float4 position = mul(UNITY_MATRIX_MVP, vertex.position);
-	return UnityApplyLinearShadowBias(position);
+	// Breakdown of UnityClipSpaceShadowCasterPos
+	float4 clippedPos;
+	float3 inputVertex = vertex.position.xyz;
+	if (unity_LightShadowBias.z != 0.0) {
+		float3 wPosition = mul(unity_ObjectToWorld, float4(inputVertex, 1)).xyz;
+		float3 wNormal = UnityObjectToWorldNormal(vertex.normal);
+		float3 wLight = normalize(UnityWorldSpaceLightDir(wPosition));
+
+		float cosine = dot(wNormal, wLight);
+		float sine = sqrt(1 - cosine * cosine);
+		float normalBias = unity_LightShadowBias.z * sine;
+
+		wPosition -= wNormal * normalBias;
+
+		clippedPos = mul(UNITY_MATRIX_VP, float4(wPosition, 1));
+	}
+	else {
+		clippedPos = UnityObjectToClipPos(inputVertex);
+	}
+	return UnityApplyLinearShadowBias(clippedPos);
 }
 
 /*

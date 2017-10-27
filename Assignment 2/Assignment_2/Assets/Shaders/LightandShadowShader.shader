@@ -7,7 +7,7 @@
 * Uses the FirstPass.cginc, SecondPass.cginc and ShadowPass.cginc custom shaders
 */
 
-Shader "EthanShader"
+Shader "LightandShadowShader"
 {
 	/*
 	* Properties for user to change for Ethan
