@@ -1,9 +1,10 @@
 ﻿/*
 * Name: ShadowPass.cs
-* Date: 26/10/2017
+* Date: 27/10/2017
 * Author: Michael Cartwright
-* Version: 1.0
+* Version: 1.2
 * Custom shader that allows for shadows to be projected
+* To be called from third Pass
 */
 
 #include "UnityCG.cginc"
@@ -26,7 +27,7 @@ struct VertexInput
 */
 float4 ShadowVertex(VertexInput vertex) : SV_POSITION
 {
-	// Breakdown of UnityClipSpaceShadowCasterPos
+	// Cast Shadows from GameObject
 	float4 clippedPos;
 	float3 inputVertex = vertex.position.xyz;
 	if (unity_LightShadowBias.z != 0.0) {

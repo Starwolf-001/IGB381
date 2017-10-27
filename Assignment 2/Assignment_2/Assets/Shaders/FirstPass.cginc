@@ -1,14 +1,24 @@
 ﻿/*
 * Name: FirstPass.cs
-* Date: 08/09/2017
+* Date: 27/10/2017
 * Author: Michael Cartwright
-* Version: 4.1
+* Version: 5.0
 * Custom shader that is used in the first pass of a Game Object's shader.
 * Applies color and normal mapping textures.
 * Applies color, specular, diffuse and rim lighting effects to an Object.
 * Also includes bump mapping and depth for textures.
 * These parameters can be adjusted and changed by the user.
 * Based from Sun directional light source
+
+* Work in Progress:
+* Sampling Shadows
+* To be Worked on:
+[1] Multiple Shadows
+[2] Confirm if there are Hard Shadows
+[3] Soft Shadows
+* Extra Work to be Done if Time:
+[1] Spotlight Shadows
+[2] Point Light Shadows
 */
 
 #include "UnityCG.cginc"

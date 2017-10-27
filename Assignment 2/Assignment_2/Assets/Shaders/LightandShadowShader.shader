@@ -3,7 +3,7 @@
 * Date: 27/10/2017
 * Author: Michael Cartwright
 * Version: 5.0
-* Shader for ThirdPersonCharacter Ethan
+* Shader for GameObject
 * Uses the FirstPass.cginc, SecondPass.cginc and ShadowPass.cginc custom shaders
 */
 
@@ -30,9 +30,9 @@ Shader "LightandShadowShader"
 	}
 
 	/*
-	* Subshader used for Ethan in Assignment_1
-	* Pre: First Pass begins
-	* Post: Second Pass ends
+	* Subshader used for GameObjects in Assignment_2 with the exception to trees to preserve leafs textures
+	* Pre: First Pass Begins
+	* Post: Produce lighting effect from Sun (Other Spotlight sources) and sample shadow coordinates from GameObject
 	*/
 	Subshader
 	{
@@ -44,7 +44,6 @@ Shader "LightandShadowShader"
 		Pass
 		{
 			// Directional light from Sun
-			// No Cookie Attenuation for lightsource
 			Tags{ "Lightmode" = "ForwardBase" }
 			CGPROGRAM
 			#pragma multi_compile _ SHADOWS_SCREEN
