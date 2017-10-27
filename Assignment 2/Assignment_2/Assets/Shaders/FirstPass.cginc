@@ -57,6 +57,8 @@ struct VSOutput
 	float3 normWorld: TEXCOORD2;
 	float3 tangWorld: TEXCOORD3;
 	float3 binoWorld: TEXCOORD4;
+	float4 shadowCoords : TEXCOORD5;
+	float3 vertexLightColor : TEXCOORD6;
 };
 
 /*
@@ -74,8 +76,11 @@ VSOutput VS_NormalMapping(VSInput a_Input)
 
 	output.posWorld = mul(unity_ObjectToWorld, a_Input.pos);
 	output.pos = mul(UNITY_MATRIX_MVP, a_Input.pos);
-	
+
 	output.tex = a_Input.tex;
+
+	output.shadowCoords = a_Input.pos;
+	ComputeVertexLightCOlor(a_Input);
 
 	return output;
 }
@@ -96,7 +101,7 @@ half4 PS_NormalMapping(VSOutput a_Input) : COLOR
 	// directional light
 	if(_WorldSpaceLightPos0.w == 0.0)
 	{
-		atten = 1.0;
+		atten = tex2D(_ShadowMapTexture, a_Input.shadowCoordinates.xy);
 		lightDirection = normalize(_WorldSpaceLightPos0.xyz);
 	}
 	else 

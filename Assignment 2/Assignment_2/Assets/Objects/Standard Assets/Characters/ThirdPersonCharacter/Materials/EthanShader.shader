@@ -1,10 +1,10 @@
 ﻿/*
 * Name: EthanShader.shader
-* Date: 08/09/2017
+* Date: 25/10/2017
 * Author: Michael Cartwright
-* Version: 3.0
+* Version: 4.0
 * Shader for ThirdPersonCharacter Ethan
-* Uses the FirstPass.cginc and SecondPass.cginc custom shaders
+* Uses the FirstPass.cginc, SecondPass.cginc and ShadowPass.cginc custom shaders
 */
 
 Shader "EthanShader"
@@ -47,6 +47,8 @@ Shader "EthanShader"
 			// No Cookie Attenuation for lightsource
 			Tags{ "Lightmode" = "ForwardBase" }
 			CGPROGRAM
+			#pragma multi_compile _ SHADOWS_SCREEN
+			#pragma multi_compile _ VERTEXLIGHT_ON
 			#pragma vertex VS_NormalMapping
 			#pragma fragment PS_NormalMapping
 			#include "Assets\Shaders\FirstPass.cginc"
@@ -69,6 +71,22 @@ Shader "EthanShader"
 			#pragma vertex VS_NormalMapping
 			#pragma fragment PS_NormalMapping
 			#include "Assets\Shaders\SecondPass.cginc"
+			ENDCG
+		}
+
+		/*
+		* Shadow Pass for shadows to be cast
+		* Pre: All lightning effects completed
+		* Post: Produces shadow of object
+		*/
+		Pass
+		{
+			// For shadows to be cast
+			Tags{ "Lightmode" = "ShadowCaster" }
+			CGPROGRAM
+			#pragma vertex ShadowVertex
+			#pragma fragment ShadowFragment
+			#include "Assets\Shaders\ShadowPass.cginc"
 			ENDCG
 		}
 	}
